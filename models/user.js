@@ -22,7 +22,7 @@ const userSchema = new Schema({
     },
     profileImageURL : {
         type : String ,
-        default : './images/default.jpg',
+        default : '../images/default.png',
     },
     role:{
         type : String ,
@@ -62,5 +62,5 @@ userSchema.static("matchPasswordAndGenerateToken" , async function(email , passw
     return token;
 })
 
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 module.exports = User;

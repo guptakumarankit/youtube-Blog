@@ -22,7 +22,8 @@ app.set("path" , path.resolve('./views'));
 // we handle form data form frontend then use that 
 app.use(express.urlencoded({extended : false}));
 app.use(cookieParser());
-app.use(checkForAuthenticationCookie("token"));
+app.use(checkForAuthenticationCookie("token")); 
+// static file ko public karna ke liye.
 app.use(express.static(path.resolve("./public")));
 
 // when we use any localhost:8000/user/anything then we use useRoute.
